@@ -1,0 +1,16 @@
+{
+  "params": {
+    "local_server": "true",
+    "local_uri": "mysql://root:@localhost:3307/captionit",
+    "prod_uri": "mysql://root:@localhost:3307/captionit",
+    "fb_url": "https://facebook.com/codingthunder",
+    "tw_url": "https://twitter.com/codingthunder",
+    "gh_url": "https://github.com/codingthunder",
+    "blog_name": "Smart Slate",
+    "tag_line": "read it to grasp it",
+    "gmail-user": "bedisimar1234@gmail.com",
+    "gmail-password": "Jamesbond@007",
+    "about_text": "Hi my name is Simar and I learn from programming tutorials and I am a good boy",
+    "no_of_posts": 4
+  }
+}

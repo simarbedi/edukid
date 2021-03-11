@@ -1,0 +1,259 @@
+{% extends "layout.html" %} {% block body %}
+<section class="promo">
+  <div class="slider-wrap">
+    <ul class="slider">
+      <li>
+        <img
+          class="slide"
+          src="{{ url_for('static', filename='images/main_splash.jpg') }}"
+          alt=""
+          style="width: 100%"
+        />
+        <img
+          class="slide-mask"
+          src="{{ url_for('static', filename='images/bg_slider-mask.png') }}"
+          alt=""
+          style="width: 100%; height: 100%"
+        />
+        <div class="slide-info">
+          <h1><a href="#">Education for kids</a></h1>
+          <p>
+            Learn and enjoy your baby steps towards success. Enjoy learning with
+            your peers and step towards a better future. Learn and grow step by
+            step
+          </p>
+          <a class="btn red" href="#">Learn more</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+<section id="main">
+  <div class="widget-boxes">
+    <div class="box">
+      <a href="#">
+        <div class="box-info about">
+          <h2>About the Website</h2>
+          <p>
+            Aimed at providing quality knowledge and experience for the child's
+            education.
+          </p>
+        </div>
+      </a>
+    </div>
+    <div class="box">
+      <a href="#">
+        <div class="box-info experience">
+          <h2>Our Aim</h2>
+          <p>
+            Try to give knowledge to the future generation for a better future
+            of the country.
+          </p>
+        </div>
+      </a>
+    </div>
+    <div class="box">
+      <a href="#">
+        <div class="box-info fun">
+          <h2>Big fun for kids!</h2>
+          <p>
+            Learn while having fun and with lot of excitement. Enjoy learn and
+            have fun.
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="top-pink-border"></div>
+  <div class="event-wrap">
+    <div class="block-event">
+      <div class="upcoming-event">
+        <h2>January’s upcoming event</h2>
+        <div class="event-description">
+          <h3>
+            <a href="#">{{events.title}}</a>
+          </h3>
+          <div class="metadata">
+            <time datetime="{{events.datetime}}"
+              >{{events.date }}<span>{{events.time}}</span></time
+            >
+            <span>{{events.place}}</span>
+          </div>
+          <p>{{events.about}}</p>
+          <a class="btn yellow" href="/events">Learn more</a>
+        </div>
+      </div>
+      <div class="widget-calendar">
+        <h3>Event calendar</h3>
+        <div class="wrap-calendar">
+          <table class="event-calendar">
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <thead>
+              <tr>
+                <th scope="col" class="controls">
+                  <span class="prev-mn"><a href="#">-</a></span>
+                </th>
+                <th scope="col" colspan="5" class="month">JANUARY 2021</th>
+                <th scope="col" class="controls">
+                  <span class="next-mn"><a href="#">-</a></span>
+                </th>
+              </tr>
+              <tr>
+                <th scope="col" title="Monday">Mon</th>
+                <th scope="col" title="Tuesday">Tue</th>
+                <th scope="col" title="Wednesday">Wed</th>
+                <th scope="col" title="Thursday">Thu</th>
+                <th scope="col" title="Friday">Fri</th>
+                <th scope="col" title="Saturday">Sat</th>
+                <th scope="col" title="Sunday">Sun</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="cell-wrap another-day">28</div></td>
+                <td><div class="cell-wrap another-day">29</div></td>
+                <td><div class="cell-wrap another-day">30</div></td>
+                <td><div class="cell-wrap another-day">31</div></td>
+                <td><div class="cell-wrap">1</div></td>
+                <td><div class="cell-wrap">2</div></td>
+                <td><div class="cell-wrap">3</div></td>
+              </tr>
+              <tr>
+                <td><div class="cell-wrap">4</div></td>
+                <td><div class="cell-wrap">5</div></td>
+                <td><div class="cell-wrap">6</div></td>
+                <td><div class="cell-wrap">7</div></td>
+                <td><div class="cell-wrap">8</div></td>
+                <td><div class="cell-wrap">9</div></td>
+                <td><div class="cell-wrap">10</div></td>
+              </tr>
+              <tr>
+                <td><div class="cell-wrap">11</div></td>
+                <td><div class="cell-wrap">12</div></td>
+                <td><div class="cell-wrap">13</div></td>
+                <td><div class="cell-wrap">14</div></td>
+                <td><div class="cell-wrap">15</div></td>
+                <td><div class="cell-wrap">16</div></td>
+                <td><div class="cell-wrap">17</div></td>
+              </tr>
+              <tr>
+                <td><div class="cell-wrap">18</div></td>
+                <td><div class="cell-wrap">19</div></td>
+                <td><div class="cell-wrap">20</div></td>
+                <td><div class="cell-wrap">21</div></td>
+                <td><div class="cell-wrap">22</div></td>
+                <td><div class="cell-wrap">23</div></td>
+                <td><div class="cell-wrap">24</div></td>
+              </tr>
+              <tr>
+                <td><div class="cell-wrap">25</div></td>
+                <td><div class="cell-wrap">26</div></td>
+                <td><div class="cell-wrap">27</div></td>
+                <td><div class="cell-wrap">28</div></td>
+                <td><div class="cell-wrap">29</div></td>
+                <td><div class="cell-wrap">30</div></td>
+                <td><div class="cell-wrap">31</div></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="legend">
+            <span class="upcoming">Upcoming event</span
+            ><span class="archival">Archival event</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-pink-border"></div>
+  <div class="widget-boxes news">
+    <h2>Latest news</h2>
+
+    <div class="box">
+      <a class="news-img" href="#">
+        <img
+          src="https://img.etimg.com/thumb/msid-79576231,width-165,height-123/news/politics-and-nation/ranjitsinh-disale-won-global-teacher-prize-heres-an-exclusive-interview.jpg"
+          alt=""
+        />
+        <div class="mask"></div>
+      </a>
+      <div class="box-info">
+        <h3>
+          <a
+            href="https://economictimes.indiatimes.com/news/politics-and-nation/ranjitsinh-disale-won-global-teacher-prize-heres-an-exclusive-interview/videoshow/79576231.cms"
+            >Ranjitsinh Disale, won Global Teacher Prize: Here's an exclusive
+            interview.</a
+          >
+        </h3>
+        <div class="metadata">
+          <time datetime="2020-12-05">05 Dec, 2020</time>
+          <span>Alan Smith</span>
+        </div>
+        <p>
+          On Thursday, a 32-year-old teacher named Ranjitsinh Disale was awarded
+          the much anticipated Global Teacher prize and prize money of $1
+          milli(...)
+        </p>
+      </div>
+    </div>
+    <div class="box">
+      <a class="news-img" href="#">
+        <img
+          src="https://img.etimg.com/thumb/msid-78966206,width-165,height-123/wealth/invest/investing-for-your-child-know-that-a-child-plan-is-actually-a-marketing-term-and-not-a-financial-one.jpg"
+          alt=""
+        />
+        <div class="mask"></div>
+      </a>
+      <div class="box-info">
+        <h3>
+          <a
+            href="https://economictimes.indiatimes.com/wealth/invest/investing-for-your-child-know-that-a-child-plan-is-actually-a-marketing-term-and-not-a-financial-one/articleshow/78966206.cms"
+            >Investing for your child? Know that a ‘child plan’ is actually a
+            marketing term, and not a financial one</a
+          >
+        </h3>
+        <div class="metadata">
+          <time datetime="2020-11-03">03 Nov, 2020</time>
+          <span>Tom Jones</span>
+        </div>
+        <p>
+          At Value Research, we get a lot of emails from parents who are looking
+          for the best possible ‘child plan’ for their kids. (...)
+        </p>
+      </div>
+    </div>
+    <div class="box">
+      <a class="news-img" href="#">
+        <img
+          src="https://img.etimg.com/thumb/msid-77561256,width-300,imgsize-1886937,,resizemode-4,quality-100/covcov1.jpg"
+          alt=""
+        />
+        <div class="mask"></div>
+      </a>
+      <div class="box-info">
+        <h3>
+          <a
+            href="https://economictimes.indiatimes.com/wealth/plan/how-to-save-for-your-childs-higher-education/articleshow/77561281.cms"
+            >How to save for your child's higher education</a
+          >
+        </h3>
+        <div class="metadata">
+          <time datetime="2020-08-17">17 Aug, 2020</time>
+          <span>Sandeep Kumar</span>
+        </div>
+        <p>
+          Udayan wants to create a fund for his daughter’s higher education.
+          Although he has been saving some money in an ad-hoc manner for some
+          time, he is not sure if the amount is enough to build a suitable
+          corpus.(...)
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

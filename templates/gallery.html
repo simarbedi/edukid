@@ -1,0 +1,210 @@
+{% extends "layout.html" %} {% block body %}
+<div class="dvdr"></div>
+<div class="container">
+  <section id="main">
+    <section class="promo">
+      <h1 class="heading">Image Captioning</h1>
+      <br />
+      <p style="margin-top: -50px; margin-bottom: 10px;">Upload your image to generate a captions...</p>
+
+      <form
+        class="form-inline custom_form_inline"
+        method="POST"
+        action="/gallery"
+        enctype="multipart/form-data"
+      >
+        <label><b> Image : &nbsp;&nbsp; </b></label>
+        <input
+          class="form-control "
+          type="file"
+          name="userfile"
+          placeholder="Your image"
+        />
+        <button type="submit" class="btn red" style="border: none;margin: 10px;">Submit</button>
+      </form>
+
+      {% if your_result %}
+      <div class="slider-wrap">
+        <ul class="slider">
+          <li>
+            <img
+              class="slide custom_slide"
+              src="{{your_result['image']}}"
+              alt=""
+              style="object-fit: contain"
+            />
+            <img
+              class="slide-mask custom_slide_mask"
+              src="{{ url_for('static', filename='images/bg_slider-mask.png') }}"
+              alt=""
+            />
+            <div class="slide-info custom_slide_info">
+              <h1><a href="#">Caption</a></h1>
+              <p>{{ your_result['caption'] }}</p>
+              <a class="btn red" href="#">Learn more</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      {% endif %}
+    </section>
+
+    <h1>
+      Browse our Caption gallery. You can find here all the kids and photos from
+      events, parties and meetings that children tested out.
+    </h1>
+    <div class="tabs">
+      <ul class="filter-controls">
+        <li>
+          <a
+            href="#"
+            data-filter="*"
+            data-currently-viewing="all"
+            class="selected"
+            >Show All</a
+          >
+        </li>
+        <li><a href="#" data-filter=".kids">Kids</a></li>
+        <li><a href="#" data-filter=".captions">Captions</a></li>
+      </ul>
+    </div>
+
+    <ul class="slider sortable-grid">
+      <li>
+        <ul>
+          {% for caption in captions %}
+
+          <li class="grid-item captions">
+            <a href="#"
+              ><img src="{{caption.img_file}}" alt="" />
+              <div class="mask"></div
+			></a>
+			<p style="width: 60%; margin: 0 auto;">{{caption.caption}}</p>
+          </li>
+
+          {% endfor %}
+          <li class="grid-item kids">
+            <a href="#"
+              ><img src="{{ url_for('static', filename='images/img-kids01.jpg') }}" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <!-- <li class="grid-item meeting">
+            <a href="#"
+              ><img src="images/img-meeting01.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item parties print">
+            <a href="#"
+              ><img src="images/img-parties03.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item meeting">
+            <a href="#"
+              ><img src="images/img-meeting03.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item meeting">
+            <a href="#"
+              ><img src="images/img-meeting04.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item kids">
+            <a href="#"
+              ><img src="images/img-kids05.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item meeting">
+            <a href="#"
+              ><img src="images/img-meeting02.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item parties">
+            <a href="#"
+              ><img src="images/img-parties03.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item parties">
+            <a href="#"
+              ><img src="images/img-parties02.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item meeting">
+            <a href="#"
+              ><img src="images/img-meeting01.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item meeting print">
+            <a href="#"
+              ><img src="images/img-meeting03.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item kids">
+            <a href="#"
+              ><img src="images/img-kids03.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item kids">
+            <a href="#"
+              ><img src="images/img-kids04.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item meeting print">
+            <a href="#"
+              ><img src="images/img-meeting04.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item parties print">
+            <a href="#"
+              ><img src="images/img-person01.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item kids">
+            <a href="#"
+              ><img src="images/img-kids01.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li>
+
+          <li class="grid-item kids print">
+            <a href="#"
+              ><img src="images/img-kids02.jpg" alt="" />
+              <div class="mask"></div
+            ></a>
+          </li> -->
+        </ul>
+      </li>
+    </ul>
+  </section>
+</div>
+{% endblock %}

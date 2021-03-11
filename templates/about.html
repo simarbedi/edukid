@@ -1,0 +1,45 @@
+{% extends "layout.html" %} {% block body %}
+<div class="dvdr"></div>
+<div class="container">
+  <section id="main">
+    <h1>
+      It is a website for improving knowledge and educational. Helps to provide fun way of learning. 
+    </h1>
+    <div class="about-txt">
+      <div class="col">
+        <p>
+          Education is the process of facilitating learning, or the acquisition
+          of knowledge, skills, values, beliefs, and habits. Educational methods
+          include teaching, training, storytelling, discussion and directed
+          research. Education frequently takes place under the guidance of
+          educators, however learners can also educate themselves. Education can
+          take place in formal or informal settings and any experience that has
+          a formative effect on the way one thinks, feels, or acts may be
+          considered educational.
+        </p>
+      </div>
+      <div class="col-dvdr">&nbsp;</div>
+      
+    </div>
+    <div class="person">
+      <div class="person-img">
+        <img src="{{ url_for('static', filename='images/me.jpg')}}" alt="" />
+        <div class="mask"></div>
+      </div>
+      <div class="person-description">
+        <h2>Simarpreet Singh Bedi</h2>
+        <address>
+          (+91) 9560509319
+          <a class="email" href="bedisimar1234@gmail.com"
+            >bedisimar1234@gmail.com</a
+          >
+          <a class="facebook" href="#">Visit me at Facebook</a>
+        </address>
+        <p>
+          I am a learner and loves to solve challenging problems and understand and teach it in a easy way.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}
